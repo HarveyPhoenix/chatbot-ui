@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'docker'
 
 jobs:
   docker:
@@ -26,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: harveyphoenix/chatbot-ui:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/chatbot-ui:latest
